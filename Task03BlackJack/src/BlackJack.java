@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 public class BlackJack {
   public static void main(String[] args) {
-
-    Deck deck = new Deck(12);
+    Deck deck = new Deck();
 
     System.out.println(deck);
 

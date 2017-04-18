@@ -4,16 +4,24 @@ import java.util.Collections;
 public class Deck {
   private static final String[] COLORS = new String[] {"hearts","clubs","diamonds","spades" };
   ArrayList<Card> cards;
-  ArrayList<Card> used;
+  ArrayList<Card> usedCards;
+
+  @Override
+  public String toString() {
+    return "Deck{" +
+            "cards=" + cards +
+            ", usedCards=" + usedCards +
+            '}';
+  }
 
   public Deck() {
     cards = new ArrayList<>();
     for (String color : COLORS) {
-      for (int i = 1; i < 14; i++) {
+      for (int i = 1; i < 4; i++) {
         cards.add(new Card(color, i));
       }
     }
-    used = new ArrayList<>();
+    usedCards = new ArrayList<>();
     Collections.shuffle(cards);
   }
   public Card draw() {
@@ -21,7 +29,7 @@ public class Deck {
       return null;
     }
     Card removed = cards.remove(0);
-    used.add(removed);
+    usedCards.add(removed);
     return removed;
   }
 }
