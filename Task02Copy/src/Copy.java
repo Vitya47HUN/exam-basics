@@ -1,15 +1,13 @@
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Copy {
-  private final static String FILE_NAME;
 
-  public static void main(String[] args) {
-    List<String> todoLines = readLinesFromFile();
+  public static void main(String[] args) throws IOException {
+
+//    List<String> todoLines = readLinesFromFile();
     // This should be the basic replica of the 'cp' command
     // If ran from the command line without arguments
     // It should print out the usage:
@@ -23,33 +21,11 @@ public class Copy {
       Usage.printUsage();
     } else if (args.length == 1) {
       Usage.oneArgument();
-    } else if (args.length == 3) {
-      for (int i = 0; i < todoLines.size(); i++) {
-        System.out.println(i + 1 + " - " + todoLines.get(i));
-        writeToFile(todoLines);
-      }
-    }
-  }
-
-  private static List<String> readLinesFromFile() {
-    Path path = Paths.get(FILE_NAME);
-    List<String> todoLines;
-    try {
-      todoLines = Files.readAllLines(path);
-    } catch (IOException e) {
-      e.printStackTrace();
-      todoLines = new ArrayList<>();
-    }
-    return todoLines;
-  }
-
-
-  private static void writeToFile(List<String> data) {
-    Path path = Paths.get(FILE_NAME);
-    try {
-      Files.write(path, data);
-    } catch (IOException e) {
-      e.printStackTrace();
+    } else if (args.length == 3 && args[0] == "copy") {
+      File source = new File(args[1]);
+      File destination = new File(args[2]);
+      Usage.copyFile(source,destination);
     }
   }
 }
+
