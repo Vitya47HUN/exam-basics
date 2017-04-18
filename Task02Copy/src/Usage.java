@@ -17,5 +17,4 @@ public class Usage {
   public static void copyFile(File from, File to ) throws IOException {
     Files.copy( from.toPath(), to.toPath() );
   }
-
 }
