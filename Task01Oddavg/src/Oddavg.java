@@ -7,6 +7,9 @@ public class Oddavg {
     numList.add(1);
     numList.add(2);
     numList.add(3);
+    numList.add(4);
+    numList.add(5);
+    numList.add(6);
     // Create a function called `oddAverage` that takes a list of numbers as parameter
     // and returns the average value of the odd numbers in the list
     // Create basic unit tests for it with at least 3 different test cases
@@ -15,17 +18,16 @@ public class Oddavg {
 
   public static int oddAverage(ArrayList<Integer> input){
     ArrayList<Integer> sortedList = new ArrayList<>();
-    for (int i = 0;i < input.size(); i++){
-      if(input.indexOf(i) % 2 != 0){
+    for (int i = 0;i < input.size() + 1; i++){
+      if(input.indexOf(i) % 2 == 0){
         sortedList.add(i);
       }
     }
-    int sum = 0;
+    int average = 0;
     for (int j = 0; j < sortedList.size(); j++) {
-      sum += (int) sortedList.get(j);
+      average += (int) sortedList.get(j);
     }
-    sum = sum / sortedList.size();
-    return sum;
+    average = average / sortedList.size();
+    return average;
   }
-
 }
