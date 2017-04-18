@@ -1,0 +1,2 @@
+A constructor is a block of code similar to a method that’s called when an instance of an object is created.
+        You use a constructor to create new objects often with parameters specifying the initial state or other important information about the object.
