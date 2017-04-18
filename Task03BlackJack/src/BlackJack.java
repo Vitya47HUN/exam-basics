@@ -7,11 +7,8 @@ public class BlackJack {
 
     System.out.println(deck);
 
-    System.out.println(drawn);
+    System.out.println(deck.draw());
     System.out.println(deck);
-
-  }
-  public void drawn(){
 
   }
 }

@@ -1,5 +1,4 @@
 public class Card {
-  public static final String COLOR_HEART = "heart";
   String color;
   int value;
 
