@@ -4,6 +4,9 @@ public class Usage {
             "====================\n" +
             "Command line arguments:\n" +
             "copy [source] [destination]\n");
+  }
 
+  public static void oneArgument() {
+    System.out.println("No destination provided");
   }
 }
